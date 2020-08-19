@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 126789285}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 2, z: -10}
 --- !u!1 &1986104567
 GameObject:
   m_ObjectHideFlags: 0
