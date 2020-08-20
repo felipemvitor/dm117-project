@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     public Transform target;
 
     [Tooltip("Posição da câmera em relação ao alvo")]
-    public Vector3 offset = new Vector3(0, 2, 10);
+    private Vector3 offset = new Vector3(0, 2, -10);
 
     // Start is called before the first frame update
     void Start()
