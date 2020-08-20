@@ -25,6 +25,9 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+	if(MenuPauseComp.paused) return;
+
         var xSpeed = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
         var ySpeed = Input.GetAxis("Vertical") * jumpSpeed * Time.deltaTime;
 
