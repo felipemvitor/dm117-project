@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -38,6 +40,11 @@ public class PlayerBehavior : MonoBehaviour
     void Update()
     {
         if (MenuPauseComp.paused) return;
+
+        if(transform.position.y <= 6)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
 
         var xSpeed = Input.GetAxis("Vertical") * movSpeed * Time.deltaTime;
         var zSpeed = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
