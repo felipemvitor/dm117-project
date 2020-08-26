@@ -40,16 +40,15 @@ public class PlayerBehavior : MonoBehaviour
         if (MenuPauseComp.paused) return;
 
         var xSpeed = Input.GetAxis("Vertical") * movSpeed * Time.deltaTime;
-        player.transform.Translate(new Vector3(xSpeed, 0, 0));
+        var zSpeed = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
+        player.transform.Translate(new Vector3(xSpeed, 0, zSpeed* -1));
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            print("Jumping: " + jumping);
             if (!jumping)
             {
                 player.AddForce(jump * jumpForce, ForceMode.Impulse);
                 jumping = true;
-                print("Jumping changed to: " + jumping);
             }
         }
     }
