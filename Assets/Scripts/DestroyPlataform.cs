@@ -6,7 +6,7 @@ using UnityEngine;
 public class DestroyPlataform : MonoBehaviour 
 {    
     
-     public float fallDelay = 2.0f;
+     public float fallDelay = 1.0f;
      
      void OnCollisionEnter(Collision collidedWithThis)
      {
