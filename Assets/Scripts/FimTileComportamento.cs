@@ -23,7 +23,7 @@ public class FimTileComportamento : MonoBehaviour
         //Verifica se o player passou pelo fim do TileBasico
         if(other.GetComponent<PlayerBehavior>()) {
             GameObject.FindObjectOfType<ControladorJogo>().SpawnProxTile();
-            Destroy(transform.parent.gameObject, tempoDestruir);
+           // Destroy(transform.parent.gameObject, tempoDestruir);
 
         }
     }
