@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FimTileComportamento : MonoBehaviour
 {
+
+    public static bool passou = false;
     [Tooltip("Tempo esperado antes de destruir o TileBasico")]
     public float tempoDestruir = 4.0f;
     // Start is called before the first frame update
@@ -22,9 +24,9 @@ public class FimTileComportamento : MonoBehaviour
         
         //Verifica se o player passou pelo fim do TileBasico
         if(other.GetComponent<PlayerBehavior>()) {
+            ControladorJogo.numTiles++;
             GameObject.FindObjectOfType<ControladorJogo>().SpawnProxTile();
-           // Destroy(transform.parent.gameObject, tempoDestruir);
-
+            passou = true;
         }
     }
 }

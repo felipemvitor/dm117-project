@@ -21,9 +21,9 @@ public class ObstaculoComp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(UnityEngine.Rigidbody.FindObjectOfType<PlayerBehavior>().transform.position.x > transform.position.x) {
-         //  Debug.Log("Deu certo");
-         //   passouObstaculo = true;
-      //  } 
+    //     if(UnityEngine.Rigidbody.FindObjectOfType<PlayerBehavior>().transform.position.x > transform.position.x) {
+    //      //  Debug.Log("Deu certo");
+    //        passouObstaculo = true;
+    //    } 
     }
 }

@@ -9,20 +9,34 @@ public class DestroyPlataform : MonoBehaviour
     [Tooltip("Referencia para o prefab do obstaculo")]
     public GameObject obstaculo;
 
-     public float fallDelay = 1.0f;
+    private Rigidbody plataform;
+
+     public float fallDelay = 5.0f;
      
+
+     
+    // Start is called before the first frame update
+    void Start()
+    {
+        plataform = GetComponent<Rigidbody>();
+    }
      void OnCollisionEnter(Collision collidedWithThis)
      {
-         if (collidedWithThis.gameObject.name == "Player" && ObstaculoComp.passouObstaculo == true)
+         if (collidedWithThis.gameObject.name == "Player" && FimTileComportamento.passou == true)
          {
             StartCoroutine(FallAfterDelay());
             ObstaculoComp.passouObstaculo = false;
          }
      }
  
-     IEnumerator FallAfterDelay()
+    public IEnumerator FallAfterDelay()
      {
-         yield return new WaitForSeconds(fallDelay);
-         GetComponent<Rigidbody>().isKinematic = false;
+        yield return new WaitForSeconds(fallDelay);
+        plataform.isKinematic = false;
+
+        if(plataform != null) {
+        Destroy(plataform.transform.gameObject, 1.0f);
+        }
+    
      }
 }

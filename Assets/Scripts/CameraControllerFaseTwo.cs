@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraControllerFaseTwo : MonoBehaviour
 {
 
     [Tooltip("Referência do jogador que será acompanhado pela câmera")]

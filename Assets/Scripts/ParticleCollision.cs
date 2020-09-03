@@ -24,16 +24,21 @@ public class ParticleCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(FallAfterDelay());
+
+        if (GetComponent<ParticleSystem>().main.loop == false) {
+             if (Time.timeScale < 0.01f)
+             {
+                 GetComponent<ParticleSystem>().Simulate(Time.unscaledDeltaTime, true, false);
+             }
+         } else if (GetComponent<ParticleSystem>().main.loop == true) {
+             if (Time.timeScale < 0.01f) {
+                 GetComponent<ParticleSystem>().Simulate(Time.unscaledDeltaTime, true, false);
+             }
+             
+             if (Time.timeScale > 0.01f){
+                 GetComponent<ParticleSystem>().Simulate(Time.unscaledDeltaTime, true, false);
+             }
+         }
 
     }
-     IEnumerator FallAfterDelay()
-     {
-        Debug.Log("Particula pausada");
-        yield return new WaitForSeconds(5);
-        particle.maxParticles = 0; 
-        yield return new WaitForSeconds(2);
-        particle.maxParticles = 8; 
-
-     }
 }

@@ -23,7 +23,7 @@ public class PlayerBehavior : MonoBehaviour
 
     [Tooltip("Força do salto do jogador")]
     [Range(0, 3)]
-    public float jumpForce = 3.0f;
+    public float jumpForce = 4.0f;
 
     private Vector3 jump;
 

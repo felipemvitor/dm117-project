@@ -15,13 +15,16 @@ public class ControladorJogo : MonoBehaviour
     public Vector3 pontoInicial = new Vector3(0,0,0);
 
     [Tooltip("Quantidade de Tiles iniciais")]
-    [Range(1,20)]
+    [Range(1,8)]
     public int numSpawnIni;
 
     [Tooltip("Quantidade de Tiles sem obstaculos")]
     [Range(1,4)]
     public int numTileSemObs = 2;
 
+    [Tooltip("Quantidade total de Tiles")]
+    [Range(1,8)]
+    public static int numTiles = 0;
 
     /// <summary>
     /// Local para spawn do proximo Tile
@@ -46,6 +49,8 @@ public class ControladorJogo : MonoBehaviour
 
     public void SpawnProxTile(bool spawnObstaculos = true){
 
+        if(numTiles < 8) {
+
         var novoTile = Instantiate(tile, proxTilePos, proxTileRot);
         var newPosition = new Vector3 (20,0,0);
         
@@ -66,6 +71,7 @@ public class ControladorJogo : MonoBehaviour
             //Vamos verificar se possui a TAG
             if (filho.CompareTag("ObsSpawn"))
             {
+                Debug.Log("Adicionou na lista");
                 //Adiciona na lista como potência ponto de spawn de obstaculo
                 pontosObstaculos.Add(filho.gameObject);
 
@@ -74,6 +80,7 @@ public class ControladorJogo : MonoBehaviour
 
         if (pontosObstaculos.Count > 0)
         {
+            Debug.Log(pontosObstaculos.Count);
             //Vamos pegar um ponto aleatório
             var pontoSpawn = pontosObstaculos[Random.Range(0, pontosObstaculos.Count)];
 
@@ -86,7 +93,7 @@ public class ControladorJogo : MonoBehaviour
             //Faz esse obstaculo ser filho de TileBasico
             novoObs.SetParent(pontoSpawn.transform);
         }
-
+        }
     }
 
     // Update is called once per frame
