@@ -41,7 +41,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (MenuPauseComp.paused) return;
 
-        if(transform.position.y <= 6)
+        if(transform.position.y <= 4)
         {
             SceneManager.LoadScene("GameOver");
         }
@@ -64,5 +64,10 @@ public class PlayerBehavior : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name.Equals("Platform")) jumping = false;
+    }
+
+    public void DrawnPlayer()
+    {
+        player.velocity = new Vector3(player.velocity.x, 0, player.velocity.z);
     }
 }
