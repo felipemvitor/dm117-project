@@ -16,7 +16,7 @@ public class PendulumnGenerate : MonoBehaviour
 
     private float startTime;
 
-    private float minAngle = 30;
+    private float minAngle = 45;
     private float maxAngle = 90;
     private float numberOfPendulums = 15;
     private float angleRatio;

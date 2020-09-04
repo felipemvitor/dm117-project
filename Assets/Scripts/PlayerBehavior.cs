@@ -46,9 +46,10 @@ public class PlayerBehavior : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
 
-        var xSpeed = Input.GetAxis("Vertical") * movSpeed * Time.deltaTime;
-        var zSpeed = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
-        player.transform.Translate(new Vector3(xSpeed, 0, zSpeed* -1));
+        var xSpeed = Input.GetAxis("Vertical") * movSpeed;
+        var zSpeed = Input.GetAxis("Horizontal") * movSpeed;
+        //player.transform.Translate(new Vector3(xSpeed, 0, zSpeed* -1));
+        player.AddForce(xSpeed, 0, zSpeed * -1);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
