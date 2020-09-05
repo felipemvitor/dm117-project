@@ -14,32 +14,25 @@ public class PendulumnGenerate : MonoBehaviour
 
     private Vector3 parentPosition;
 
-<<<<<<< HEAD
-=======
     private float startTime;
 
-    private float minAngle = 30;
+    private float minAngle = 45;
     private float maxAngle = 90;
     private float numberOfPendulums = 15;
     private float angleRatio;
     private float speedRatio;
 
->>>>>>> origin/fase_one
     // Start is called before the first frame update
     void Start()
     {
         parentPosition = transform.position;
 
-<<<<<<< HEAD
-        for (int i = 0; i < 15; i++)
-=======
         startTime = new System.Random().Next(0, 4);
 
         angleRatio = (maxAngle - minAngle) / (numberOfPendulums - 1);
         speedRatio = 3 / (numberOfPendulums - 1);
 
         for (int i = 0; i < numberOfPendulums; i++)
->>>>>>> origin/fase_one
         {
             SpawnNextPendulum(i * 10);
         }
@@ -58,13 +51,6 @@ public class PendulumnGenerate : MonoBehaviour
         GameObject newPendulum = Instantiate(pendulum, position, Quaternion.identity);
         PendulumController controller = newPendulum.GetComponentInChildren<PendulumController>();
 
-<<<<<<< HEAD
-        controller.speed = new System.Random().Next(0, 6);
-        controller.startTime = new System.Random().Next(0, 4);
-        controller.angle = new System.Random().Next(0, 91);
-
-        newPendulum.transform.parent = this.transform;
-=======
         controller.startTime = this.startTime;
         controller.speed = 3 + (offset / 10) * speedRatio;
         controller.angle = minAngle + (offset / 10) * angleRatio;
@@ -72,6 +58,5 @@ public class PendulumnGenerate : MonoBehaviour
         newPendulum.transform.parent = this.transform;
 
         print("Speed: " + controller.speed + ", angle: " + controller.angle);
->>>>>>> origin/fase_one
     }
 }

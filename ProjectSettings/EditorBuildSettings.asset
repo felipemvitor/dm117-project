@@ -6,21 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TelaInicial.unity
-    guid: 7591f5364035b5e48a87f03715e06f9a
-<<<<<<< HEAD
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-=======
-  - enabled: 1
     path: Assets/Scenes/FaseTwo.unity
-    guid: 3520098cffd04964faa643067e3aaf43
->>>>>>> origin/fase_one
-  - enabled: 1
-    path: Assets/Scenes/FaseOne.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    guid: 0af6dc69eeb0996478130e203e7fce1a
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 55ff0719093aaf84fa39a2ae501ffba8
+  - enabled: 1
+    path: Assets/Scenes/TelaInicial.unity
+    guid: 7591f5364035b5e48a87f03715e06f9a
+  - enabled: 1
+    path: Assets/Scenes/FaseOne.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

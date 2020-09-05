@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class FimTileComportamento : MonoBehaviour
 {
-
-    public static bool passou = false;
     [Tooltip("Tempo esperado antes de destruir o TileBasico")]
     public float tempoDestruir = 4.0f;
     // Start is called before the first frame update
@@ -17,7 +15,7 @@ public class FimTileComportamento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -26,7 +24,6 @@ public class FimTileComportamento : MonoBehaviour
         if(other.GetComponent<PlayerBehavior>()) {
             ControladorJogo.numTiles++;
             GameObject.FindObjectOfType<ControladorJogo>().SpawnProxTile();
-            passou = true;
         }
     }
 }

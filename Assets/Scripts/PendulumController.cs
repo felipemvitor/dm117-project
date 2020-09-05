@@ -4,11 +4,7 @@ public class PendulumController : MonoBehaviour
 {
 
     [Tooltip("Velocidade do pendulo")]
-<<<<<<< HEAD
-    [Range(0, 5)]
-=======
     [Range(2, 5)]
->>>>>>> origin/fase_one
     public float speed = 2f;
 
     [Tooltip("Angulo  do pendulo")]

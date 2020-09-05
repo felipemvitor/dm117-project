@@ -29,7 +29,6 @@ public class MenuPauseComp : MonoBehaviour
         menuPausePanel.SetActive(paused);
     }
 
-
     /// <summary>
     /// Metodo para carregar uma Scene
     /// </summary>

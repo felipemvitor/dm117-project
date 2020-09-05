@@ -23,11 +23,7 @@ public class PlayerBehavior : MonoBehaviour
 
     [Tooltip("Força do salto do jogador")]
     [Range(0, 3)]
-<<<<<<< HEAD
-    public float jumpForce = 4.0f;
-=======
     public float jumpForce = 3.0f;
->>>>>>> origin/fase_one
 
     private Vector3 jump;
 
@@ -45,23 +41,13 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (MenuPauseComp.paused) return;
 
-<<<<<<< HEAD
-         if(transform.position.y <= 6)
-=======
         if(transform.position.y <= 6)
->>>>>>> origin/fase_one
         {
             SceneManager.LoadScene("GameOver");
         }
 
-<<<<<<< HEAD
         var xSpeed = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
         player.transform.Translate(new Vector3(xSpeed, 0, 0));
-=======
-        var xSpeed = Input.GetAxis("Vertical") * movSpeed * Time.deltaTime;
-        var zSpeed = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
-        player.transform.Translate(new Vector3(xSpeed, 0, zSpeed* -1));
->>>>>>> origin/fase_one
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
