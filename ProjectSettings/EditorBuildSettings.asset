@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FaseOne.unity
+    guid: 1e275c40b8c9d2e4cabd2cbf67d0ea99
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: db1cf8fe341058d4f92201f70768272e
+  - enabled: 1
+    path: Assets/Scenes/TelaInicial.unity
+    guid: bfbf8c5f9617a3f4293de99912976327
   m_configObjects: {}

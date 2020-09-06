@@ -6,10 +6,10 @@ public class CameraController : MonoBehaviour
 {
 
     [Tooltip("Referência do jogador que será acompanhado pela câmera")]
-    public Transform target;
+    public Transform alvo;
 
     [Tooltip("Posição da câmera em relação ao alvo")]
-    private Vector3 offset = new Vector3(0, 2, -10);
+    private Vector3 offset = new Vector3(-10, 4, 0);
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +20,10 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(target != null)
+        if(alvo != null)
         {
-            transform.position = target.position + offset;
-            transform.LookAt(target);
+            transform.position = alvo.position + offset;
+            transform.LookAt(alvo);
         }
     }
 }
