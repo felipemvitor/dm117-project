@@ -32,7 +32,7 @@ public class PenduloGenerator : MonoBehaviour
 
         for (int i = 0; i < numberOfPendulums; i++)
         {
-            SpawnProximoPendulo(i * 10);
+            //SpawnProximoPendulo(i * 10);
         }
     }
 

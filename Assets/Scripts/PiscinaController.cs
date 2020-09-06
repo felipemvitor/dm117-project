@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PiscinaController : MonoBehaviour
 {
-    [Tooltip("Som do jogador caindo na água")]
-    public AudioSource splashSound;
+    [Tooltip("Audios tocados quando o jogador perder")]
+    public AudioSource[] audios;
 
     // Start is called before the first frame update
     void Start()
     {
-        splashSound = GetComponent<AudioSource>();
+         audios = GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,7 +28,9 @@ public class PiscinaController : MonoBehaviour
         if (collider.gameObject.GetComponent<PlayerBehavior>())
         {
             PlayerBehavior player = collider.gameObject.GetComponent<PlayerBehavior>();
-            splashSound.Play();
+            foreach(AudioSource audio in audios){
+                audio.Play();
+            }
 
             player.Desacelerar();
         }
