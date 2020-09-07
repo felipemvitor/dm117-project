@@ -7,7 +7,7 @@ public class DestroyPlataform : MonoBehaviour
 { 
 
     private Rigidbody plataform;
-        private Rigidbody obstaculo;
+    private Rigidbody obstaculo;
 
 
      public float fallDelay = 5.0f;
@@ -26,7 +26,7 @@ public class DestroyPlataform : MonoBehaviour
 
      void OnCollisionEnter(Collision collidedWithThis)
      {
-         if (collidedWithThis.gameObject.name == "Player" && ObstaculoComp.passouObstaculo == true) {
+         if (collidedWithThis.gameObject.name == "Player") {
             StartCoroutine(FallAfterDelay());
          }
 

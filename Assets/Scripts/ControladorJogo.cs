@@ -53,7 +53,6 @@ public class ControladorJogo : MonoBehaviour
     public void SpawnProxTile(bool spawnObstaculos = true){
         if(numTiles < 8) {
             
-        ObstaculoComp.passouObstaculo = false;
         var novoTile = Instantiate(tile, proxTilePos, proxTileRot);
         var newPosition = new Vector3 (20,0,0);
         
