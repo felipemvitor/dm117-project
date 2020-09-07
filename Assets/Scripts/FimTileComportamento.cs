@@ -21,7 +21,7 @@ public class FimTileComportamento : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         
         //Verifica se o player passou pelo fim do TileBasico
-        if(other.GetComponent<PlayerBehavior>()) {
+        if(other.GetComponent<PlayerFaseTwo>()) {
             ControladorJogo.numTiles++;
             GameObject.FindObjectOfType<ControladorJogo>().SpawnProxTile();
         }

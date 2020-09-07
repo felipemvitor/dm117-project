@@ -8,9 +8,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerBehavior : MonoBehaviour
+public class PlayerFaseTwo : MonoBehaviour
 {
-    [Tooltip("Referência para o rigidbody que representa o jogador")]
+     [Tooltip("Referência para o rigidbody que representa o jogador")]
     private Rigidbody player;
 
     [Tooltip("Velocidade de corrida do jogador")]
@@ -41,15 +41,13 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (MenuPauseComp.paused) return;
 
-        if(transform.position.y <= 4)
+        if(transform.position.y <= 6)
         {
             SceneManager.LoadScene("GameOver");
         }
 
-        var xSpeed = Input.GetAxis("Vertical") * movSpeed;
-        var zSpeed = Input.GetAxis("Horizontal") * movSpeed;
-        //player.transform.Translate(new Vector3(xSpeed, 0, zSpeed* -1));
-        player.AddForce(xSpeed, 0, zSpeed * -1);
+        var xSpeed = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
+        player.transform.Translate(new Vector3(xSpeed, 0, 0));
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -66,6 +64,7 @@ public class PlayerBehavior : MonoBehaviour
         if (collision.gameObject.name.Equals("Platform")) jumping = false;
     }
 
+    
     public void DrawnPlayer()
     {
         player.velocity = new Vector3(player.velocity.x, 0, player.velocity.z);

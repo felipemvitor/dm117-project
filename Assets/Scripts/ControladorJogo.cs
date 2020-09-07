@@ -11,6 +11,9 @@ public class ControladorJogo : MonoBehaviour
     [Tooltip("Referencia para o Obstaculo")]
     public Transform obstaculo;
 
+    [Tooltip("Referencia para o novo obstaculo")]
+    public static Transform novoObs;
+
     [Tooltip("Ponto para se colocar o TileBasicoInicial")]
     public Vector3 pontoInicial = new Vector3(0,0,0);
 
@@ -48,9 +51,9 @@ public class ControladorJogo : MonoBehaviour
     }
 
     public void SpawnProxTile(bool spawnObstaculos = true){
-
         if(numTiles < 8) {
-
+            
+        ObstaculoComp.passouObstaculo = false;
         var novoTile = Instantiate(tile, proxTilePos, proxTileRot);
         var newPosition = new Vector3 (20,0,0);
         
@@ -84,11 +87,13 @@ public class ControladorJogo : MonoBehaviour
             //Vamos pegar um ponto aleatório
             var pontoSpawn = pontosObstaculos[Random.Range(0, pontosObstaculos.Count)];
 
+             var position = new Vector3 (-3,0,0);
+
             //Vamos guardar a posição desse ponto de spawn
-            var obsSpawnPos = pontoSpawn.transform.position;
+            var obsSpawnPos = pontoSpawn.transform.position + position;
 
             //Criar um novo obstaculo
-            var novoObs = Instantiate(obstaculo, obsSpawnPos, Quaternion.identity);
+            novoObs = Instantiate(obstaculo, obsSpawnPos, Quaternion.identity);
 
             //Faz esse obstaculo ser filho de TileBasico
             novoObs.SetParent(pontoSpawn.transform);
