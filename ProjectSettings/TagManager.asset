@@ -8,6 +8,7 @@ TagManager:
   - ObsSpawn
   - PontoSpawn
   - Particulas
+  - FinalObs
   layers:
   - Default
   - TransparentFX
