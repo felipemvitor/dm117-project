@@ -22,8 +22,8 @@ public class PlayerFaseTwo : MonoBehaviour
     public float jumpSpeed = 10.0f;
 
     [Tooltip("Força do salto do jogador")]
-    [Range(0, 3)]
-    public float jumpForce = 3.0f;
+    [Range(0, 4)]
+    public float jumpForce = 4.0f;
 
     private Vector3 jump;
 
