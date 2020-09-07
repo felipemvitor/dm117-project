@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334607453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35, y: 17.667, z: 20}
+  m_LocalPosition: {x: -37, y: 17.667, z: 20.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7830209316717053866}
@@ -120,11 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7830209317148578641}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-<<<<<<< HEAD
-  m_LocalPosition: {x: -34.04, y: 18, z: 20}
-=======
-  m_LocalPosition: {x: -33, y: 18, z: 20}
->>>>>>> 49d34f9286e5c6f6d36d804e025aa9fc5f372767
+  m_LocalPosition: {x: -36, y: 18, z: 20}
   m_LocalScale: {x: 0.5, y: 0, z: 2}
   m_Children: []
   m_Father: {fileID: 7830209316717053866}
@@ -250,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef0bec124c8df1048a338bdbaa60cbf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstaculo: {fileID: 0}
   fallDelay: 2
 --- !u!54 &7830209317407782395
 Rigidbody:

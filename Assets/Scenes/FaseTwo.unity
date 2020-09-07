@@ -2266,7 +2266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa4006ecf8ec6540a27f2b7b6164d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tile: {fileID: 7830209316717053866, guid: 714896bf67906f048a73a8e25bd2410f, type: 3}
+  tile: {fileID: 7830209316717053866, guid: 7a5b317717bb4934daa369baed253636, type: 3}
   obstaculo: {fileID: 6116020890430205380, guid: 8d19377c74d022443975217661097347,
     type: 3}
   pontoInicial: {x: 0, y: 0, z: 0}
