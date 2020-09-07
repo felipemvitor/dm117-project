@@ -4,7 +4,7 @@ public class PendulumController : MonoBehaviour
 {
 
     [Tooltip("Velocidade do pendulo")]
-    [Range(0, 5)]
+    [Range(2, 5)]
     public float speed = 2f;
 
     [Tooltip("Angulo  do pendulo")]

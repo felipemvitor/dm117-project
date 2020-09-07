@@ -23,7 +23,7 @@ public class PlayerBehavior : MonoBehaviour
 
     [Tooltip("Força do salto do jogador")]
     [Range(0, 3)]
-    public float jumpForce = 4.0f;
+    public float jumpForce = 3.0f;
 
     private Vector3 jump;
 
@@ -41,7 +41,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (MenuPauseComp.paused) return;
 
-         if(transform.position.y <= 6)
+        if(transform.position.y <= 6)
         {
             SceneManager.LoadScene("GameOver");
         }

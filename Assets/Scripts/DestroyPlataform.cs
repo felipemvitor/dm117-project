@@ -4,15 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DestroyPlataform : MonoBehaviour 
-{    
-
-    [Tooltip("Referencia para o prefab do obstaculo")]
-    public GameObject obstaculo;
+{ 
 
     private Rigidbody plataform;
 
      public float fallDelay = 5.0f;
-     
 
      
     // Start is called before the first frame update
@@ -20,12 +16,15 @@ public class DestroyPlataform : MonoBehaviour
     {
         plataform = GetComponent<Rigidbody>();
     }
+
+    void Update() {
+
+    }
+
      void OnCollisionEnter(Collision collidedWithThis)
      {
-         if (collidedWithThis.gameObject.name == "Player" && FimTileComportamento.passou == true)
-         {
-            StartCoroutine(FallAfterDelay());
-            ObstaculoComp.passouObstaculo = false;
+         if (collidedWithThis.gameObject.name == "Player") {
+            //StartCoroutine(FallAfterDelay());
          }
      }
  
@@ -34,8 +33,8 @@ public class DestroyPlataform : MonoBehaviour
         yield return new WaitForSeconds(fallDelay);
         plataform.isKinematic = false;
 
-        if(plataform != null) {
-        Destroy(plataform.transform.gameObject, 1.0f);
+        if (plataform != null) {
+          Destroy(plataform.transform.gameObject, 1.0f);
         }
     
      }
