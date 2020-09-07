@@ -15,7 +15,7 @@ public class PlayerBehavior : MonoBehaviour
 
     [Tooltip("Velocidade de corrida do jogador")]
     [Range(1, 10)]
-    public float movSpeed = 5.0f;
+    public float movSpeed = 7.0f;
 
     [Tooltip("Velocidade de corrida do jogador")]
     [Range(5, 15)]

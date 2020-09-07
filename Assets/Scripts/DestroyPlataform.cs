@@ -40,7 +40,7 @@ public class DestroyPlataform : MonoBehaviour
         obstaculo.isKinematic = false;
 
         if (plataform != null) {
-          Destroy(plataform.transform.gameObject, 1.0f);
+          Destroy(plataform.transform.gameObject, 0.5f);
         }
      }
 }

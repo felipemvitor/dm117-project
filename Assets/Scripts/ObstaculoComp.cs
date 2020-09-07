@@ -7,6 +7,7 @@ public class ObstaculoComp : MonoBehaviour
     private Rigidbody obstaculo;
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.GetComponent<PlayerFaseTwo>()) {
+            collision.rigidbody.velocity =  new Vector3(collision.rigidbody.velocity.x, 0, collision.rigidbody.velocity.z);
             obstaculo.isKinematic = true;
         }
     }

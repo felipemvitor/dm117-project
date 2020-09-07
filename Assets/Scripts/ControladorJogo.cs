@@ -86,10 +86,8 @@ public class ControladorJogo : MonoBehaviour
             //Vamos pegar um ponto aleatório
             var pontoSpawn = pontosObstaculos[Random.Range(0, pontosObstaculos.Count)];
 
-             var position = new Vector3 (-3,0,0);
-
             //Vamos guardar a posição desse ponto de spawn
-            var obsSpawnPos = pontoSpawn.transform.position + position;
+            var obsSpawnPos = pontoSpawn.transform.position;
 
             //Criar um novo obstaculo
             novoObs = Instantiate(obstaculo, obsSpawnPos, Quaternion.identity);
