@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class ParticleCollision : MonoBehaviour
 {
+    
+    [Tooltip("Referência para a particula")]
     ParticleSystem particle;
     private void OnParticleCollision(GameObject other) {
         if (other.name.Equals("Player")) SceneManager.LoadScene("GameOver");

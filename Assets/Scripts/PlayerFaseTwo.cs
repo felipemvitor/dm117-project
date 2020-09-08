@@ -10,7 +10,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerFaseTwo : MonoBehaviour
 {
-     [Tooltip("Referência para o rigidbody que representa o jogador")]
+    [Tooltip("Referência para o rigidbody que representa o jogador")]
     private Rigidbody player;
 
     [Tooltip("Velocidade de corrida do jogador")]
