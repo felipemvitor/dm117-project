@@ -16,11 +16,18 @@ public class ParticleCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 
     private void OnParticleCollision(GameObject other)
     {
-        if (other.name.Equals("Jogador")) SceneManager.LoadScene("GameOver");
+        if (other.gameObject.name == "Jogador") {
+            if(JogadorComportamentoFaseDois.life == 0) {
+                SceneManager.LoadScene("GameOver");
+             } else {
+                JogadorComportamentoFaseDois.life--;
+                SceneManager.LoadScene("TelaInicialFaseDois");
+             }
+         } 
     }
 }

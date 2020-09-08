@@ -35,6 +35,11 @@ public class JogadorComportamentoFaseDois : MonoBehaviour
     /// </summary>
     private bool naAgua = false;
 
+    /// <summary>
+    /// Valor que indica a quantidade de vidas do jogador
+    /// </summary>
+    public static int life = 3;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -92,6 +97,7 @@ public class JogadorComportamentoFaseDois : MonoBehaviour
     {
         //Caso o jogador tenha colidido com a plataforma significa que ele nao esta mais saltando
         if (collision.gameObject.name.Equals("Plataforma")) saltando = false;
+
     }
 
     /// <summary>

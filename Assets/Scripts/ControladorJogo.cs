@@ -73,7 +73,6 @@ public class ControladorJogo : MonoBehaviour
                 //Vamos verificar se possui a TAG
                 if (filho.CompareTag("ObsSpawn"))
                 {
-                    Debug.Log("Adicionou na lista");
                     //Adiciona na lista como potência ponto de spawn de obstaculo
                     pontosObstaculos.Add(filho.gameObject);
 
@@ -82,7 +81,6 @@ public class ControladorJogo : MonoBehaviour
 
             if (pontosObstaculos.Count > 0)
             {
-                Debug.Log(pontosObstaculos.Count);
                 //Vamos pegar um ponto aleatório
                 var pontoSpawn = pontosObstaculos[Random.Range(0, pontosObstaculos.Count)];
 

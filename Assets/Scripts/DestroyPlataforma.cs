@@ -25,7 +25,6 @@ public class DestroyPlataforma : MonoBehaviour
         if (collidedWithThis.gameObject.name == "Jogador")
         {
             StartCoroutine(FallAfterDelay());
-            //destroy = true;
         }
 
     }
