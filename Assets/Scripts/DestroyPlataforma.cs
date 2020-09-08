@@ -22,7 +22,7 @@ public class DestroyPlataforma : MonoBehaviour
 
     void OnCollisionEnter(Collision collidedWithThis)
     {
-        if (collidedWithThis.gameObject.name == "Jogador")
+        if (collidedWithThis.gameObject.name == "Jogador" && ControladorJogo.numTiles < 6)
         {
             StartCoroutine(FallAfterDelay());
         }

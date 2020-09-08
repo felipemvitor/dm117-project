@@ -22,7 +22,7 @@ public class ControladorJogo : MonoBehaviour
     public int numTileSemObs = 2;
 
     [Tooltip("Quantidade total de Tiles")]
-    [Range(1, 8)]
+    [Range(1, 7)]
     public static int numTiles = 0;
 
     /// <summary>
@@ -50,9 +50,8 @@ public class ControladorJogo : MonoBehaviour
     public void SpawnProxTile(bool spawnObstaculos = true)
     {
 
-        if (numTiles < 8)
+        if (numTiles < 6)
         {
-
             var novoTile = Instantiate(tile, proxTilePos, proxTileRot);
             var newPosition = new Vector3(20, 0, 0);
 

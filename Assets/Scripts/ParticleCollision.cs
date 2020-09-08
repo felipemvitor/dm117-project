@@ -25,6 +25,7 @@ public class ParticleCollision : MonoBehaviour
             if(JogadorComportamentoFaseDois.life == 0) {
                 SceneManager.LoadScene("GameOver");
              } else {
+                 ControladorJogo.numTiles = 0;
                 JogadorComportamentoFaseDois.life--;
                 SceneManager.LoadScene("TelaInicialFaseDois");
              }

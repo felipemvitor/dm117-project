@@ -27,6 +27,18 @@ public class ChegadaController : MonoBehaviour
         {
             aplauso.Play();
             SceneManager.LoadScene("TelaInicialFaseDois");
+            
+        } else if (collider.gameObject.GetComponent<JogadorComportamentoFaseDois>()) {
+            aplauso.Play();
+            StartCoroutine(FallAfterDelay());
         }
+    }
+
+    
+    public IEnumerator FallAfterDelay()
+    {
+        yield return new WaitForSeconds(4.0f);
+        SceneManager.LoadScene("TelaFinal");
+
     }
 }
