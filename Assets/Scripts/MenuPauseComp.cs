@@ -27,6 +27,12 @@ public class MenuPauseComp : MonoBehaviour
         Time.timeScale = (paused) ? 0 : 1;
 
         menuPausePanel.SetActive(paused);
+
+        if (isPaused == false) {
+            if (MusicaController.musica != null) {
+                MusicaController.musica.Play();
+            }
+        }
     }
 
 
@@ -44,6 +50,9 @@ public class MenuPauseComp : MonoBehaviour
     {
         paused = false;
         Pause(false);
+        if (MusicaController.musica != null) {
+            MusicaController.musica.Play();
+       }
     }
 
     // Update is called once per frame

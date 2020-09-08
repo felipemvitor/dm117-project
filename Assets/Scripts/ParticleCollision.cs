@@ -23,6 +23,7 @@ public class ParticleCollision : MonoBehaviour
     {
         if (other.gameObject.name == "Jogador") {
             if(JogadorComportamentoFaseDois.life == 0) {
+                MusicaController.musica.Stop();
                 SceneManager.LoadScene("GameOver");
              } else {
                  ControladorJogo.numTiles = 0;

@@ -23,9 +23,13 @@ public class ChegadaController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+        
         if (collider.gameObject.GetComponent<JogadorComportamentoFaseUm>())
         {
             aplauso.Play();
+            if (MusicaController.musica != null) {
+                MusicaController.musica.Stop();
+            }
             SceneManager.LoadScene("TelaInicialFaseDois");
             
         } else if (collider.gameObject.GetComponent<JogadorComportamentoFaseDois>()) {
@@ -38,6 +42,9 @@ public class ChegadaController : MonoBehaviour
     public IEnumerator FallAfterDelay()
     {
         yield return new WaitForSeconds(4.0f);
+        if (MusicaController.musica != null) {
+            MusicaController.musica.Stop();
+        }        
         SceneManager.LoadScene("TelaFinal");
 
     }

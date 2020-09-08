@@ -48,7 +48,12 @@ public class JogadorComportamentoFaseUm : MonoBehaviour
     {
         if (MenuPauseComp.paused) return;
 
-        if (transform.position.y <= 4) SceneManager.LoadScene("GameOver");
+        if (transform.position.y <= 4) {
+            if(MusicaController.musica != null) {
+                MusicaController.musica.Stop();
+            }
+            SceneManager.LoadScene("GameOver");
+        } 
 
 
         if (!naAgua)
