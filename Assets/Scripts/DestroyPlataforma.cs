@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DestroyPlataforma : MonoBehaviour
 {
+    [Tooltip("Referência para o rigidbody que representa a plataforma")]
     private Rigidbody plataform;
 
     public float fallDelay = 5.0f;
-
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +22,12 @@ public class DestroyPlataforma : MonoBehaviour
 
     void OnCollisionEnter(Collision collidedWithThis)
     {
-        if (collidedWithThis.gameObject.name == "Player")
+        if (collidedWithThis.gameObject.name == "Jogador")
         {
-            //StartCoroutine(FallAfterDelay());
+            StartCoroutine(FallAfterDelay());
+            //destroy = true;
         }
+
     }
 
     public IEnumerator FallAfterDelay()
@@ -35,8 +37,7 @@ public class DestroyPlataforma : MonoBehaviour
 
         if (plataform != null)
         {
-            Destroy(plataform.transform.gameObject, 1.0f);
+            Destroy(plataform.transform.gameObject, 3.0f);
         }
-
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChegadaController : MonoBehaviour
 {
@@ -22,9 +23,10 @@ public class ChegadaController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.GetComponent<PlayerBehavior>())
+        if (collider.gameObject.GetComponent<JogadorComportamentoFaseUm>())
         {
             aplauso.Play();
+            SceneManager.LoadScene("TelaInicialFaseDois");
         }
     }
 }

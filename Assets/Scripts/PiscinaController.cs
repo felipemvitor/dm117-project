@@ -10,13 +10,13 @@ public class PiscinaController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         audios = GetComponents<AudioSource>();
+        audios = GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     /// <summary>
@@ -25,10 +25,21 @@ public class PiscinaController : MonoBehaviour
     /// <param name="collider"></param>
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.GetComponent<PlayerBehavior>())
+        if (collider.gameObject.GetComponent<JogadorComportamentoFaseUm>())
         {
-            PlayerBehavior player = collider.gameObject.GetComponent<PlayerBehavior>();
-            foreach(AudioSource audio in audios){
+            JogadorComportamentoFaseUm player = collider.gameObject.GetComponent<JogadorComportamentoFaseUm>();
+            foreach (AudioSource audio in audios)
+            {
+                audio.Play();
+            }
+
+            player.Desacelerar();
+        }
+        else if (collider.gameObject.GetComponent<JogadorComportamentoFaseDois>())
+        {
+            JogadorComportamentoFaseDois player = collider.gameObject.GetComponent<JogadorComportamentoFaseDois>();
+            foreach (AudioSource audio in audios)
+            {
                 audio.Play();
             }
 

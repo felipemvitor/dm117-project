@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
 using UnityEngine.SceneManagement;
 
-public class PlayerBehavior : MonoBehaviour
+public class JogadorComportamentoFaseDois : MonoBehaviour
 {
     [Tooltip("Referência para o rigidbody que representa o jogador")]
     private Rigidbody jogador;
@@ -50,11 +49,10 @@ public class PlayerBehavior : MonoBehaviour
 
         if (transform.position.y <= 4) SceneManager.LoadScene("GameOver");
 
-
         if (!naAgua)
         {
             //Verifica se a tecla de espaço foi pressionada (tecla de salto)
-            if (Input.GetKeyDown(KeyCode.Space))
+            /*if (Input.GetKeyDown(KeyCode.Space))
             {
                 // O jogador somente pula se estiver na plataforma.
                 // Isso evita que o jogador dê múltiplos pulos e saia voando
@@ -69,13 +67,24 @@ public class PlayerBehavior : MonoBehaviour
             {
                 //Movimenta o jogador para a frente somente quando não esta pulado
                 // Evita que o impulso do salto aumente a velocidade do jogador
-                var velocidadeX = Input.GetAxis("Vertical") * velocidadeMovimento;
-                var velocidadeZ = Input.GetAxis("Horizontal") * velocidadeMovimento;
+                var velocidadeX = Input.GetAxis("Horizontal") * velocidadeMovimento + ;
 
-                jogador.AddForce(velocidadeX, 0, velocidadeZ * -1);
-            }
+                //jogador.AddForce(velocidadeX, 0, 0);
+                jogador.transform.Translate(newVector3(velocidadeX, 0, 0));
+            }*/
 
             //Movimenta o jogador
+            var xSpeed = Input.GetAxis("Horizontal") * velocidadeMovimento * Time.deltaTime;
+            jogador.transform.Translate(new Vector3(xSpeed, 0, 0));
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (!saltando)
+                {
+                    jogador.AddForce(salto * forcaSalto, ForceMode.Impulse);
+                    saltando = true;
+                }
+            }
         }
     }
 

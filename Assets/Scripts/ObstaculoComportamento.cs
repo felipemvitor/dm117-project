@@ -5,10 +5,13 @@ using UnityEngine;
 public class ObstaculoComportamento : MonoBehaviour
 {
 
+    [Tooltip("Referência para o rigidbody que representa o obstaculo")]
+    private Rigidbody obstaculo;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        obstaculo = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -19,9 +22,9 @@ public class ObstaculoComportamento : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<PlayerBehavior>())
+        if (collision.gameObject.GetComponent<JogadorComportamentoFaseDois>())
         {
-            //Destroy(collision.gameObject);
+            obstaculo.isKinematic = true;
         }
     }
 }
