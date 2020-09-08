@@ -15,9 +15,6 @@ public class DestroyPlataform : MonoBehaviour
     private Rigidbody obstaculo;
 
      public float fallDelay = 5.0f;
-
-     public static bool destroy = false;
-
      
     // Start is called before the first frame update
     void Start()
@@ -34,7 +31,7 @@ public class DestroyPlataform : MonoBehaviour
      {
          if (collidedWithThis.gameObject.name == "Player") {
             StartCoroutine(FallAfterDelay());
-            destroy = true;
+            //destroy = true;
          }
 
      }
@@ -43,11 +40,9 @@ public class DestroyPlataform : MonoBehaviour
      {
         yield return new WaitForSeconds(fallDelay);
         plataform.isKinematic = false;
-        yield return new WaitForSeconds(fallDelay);
-        obstaculo.isKinematic = false;
 
         if (plataform != null) {
-          Destroy(plataform.transform.gameObject, 0.5f);
+          Destroy(plataform.transform.gameObject, 3.0f);
         }
      }
 }

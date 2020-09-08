@@ -23,9 +23,6 @@ public class ObstaculoComp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DestroyPlataform.destroy) {
-            Destroy(obstaculo.gameObject, 10.0f);
-        }
     
     }
 }
