@@ -34,7 +34,7 @@ public class JogadorComportamentoFaseDois : MonoBehaviour
     /// Valor que indica se o jogador caiu na agua
     /// </summary>
     private bool naAgua = false;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,12 +47,16 @@ public class JogadorComportamentoFaseDois : MonoBehaviour
     {
         if (MenuPauseComp.paused) return;
 
-        if (transform.position.y <= 4) {
+        if (transform.position.y <= 4)
+        {
             MusicaController.musica.Stop();
 
-             if (Jogador.vidas == 0) {
+            if (Jogador.vidas == 0)
+            {
                 SceneManager.LoadScene("GameOver");
-            } else {
+            }
+            else
+            {
                 Jogador.vidas--;
                 SceneManager.LoadScene("TentarNovamenteFaseDois");
             }
@@ -60,31 +64,14 @@ public class JogadorComportamentoFaseDois : MonoBehaviour
 
         if (!naAgua)
         {
-            //Verifica se a tecla de espaço foi pressionada (tecla de salto)
-            /*if (Input.GetKeyDown(KeyCode.Space))
+            RaycastHit hit;
+            //Projeta um vetor "imaginario" para corrigir problema de objetos ao utilizar o translate.
+            if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(1, 0, 0)), out hit))
             {
-                // O jogador somente pula se estiver na plataforma.
-                // Isso evita que o jogador dê múltiplos pulos e saia voando
-                if (!saltando)
-                {
-                    // Adiciona um impulso que faz o jogador saltar
-                    jogador.AddForce(salto * forcaSalto, ForceMode.Impulse);
-                    saltando = true;
-                }
+                //Movimenta o jogador
+                var xSpeed = Input.GetAxis("Horizontal") * velocidadeMovimento * Time.deltaTime;
+                jogador.transform.Translate(new Vector3(xSpeed, 0, 0));
             }
-            else if (!saltando)
-            {
-                //Movimenta o jogador para a frente somente quando não esta pulado
-                // Evita que o impulso do salto aumente a velocidade do jogador
-                var velocidadeX = Input.GetAxis("Horizontal") * velocidadeMovimento + ;
-
-                //jogador.AddForce(velocidadeX, 0, 0);
-                jogador.transform.Translate(newVector3(velocidadeX, 0, 0));
-            }*/
-
-            //Movimenta o jogador
-            var xSpeed = Input.GetAxis("Horizontal") * velocidadeMovimento * Time.deltaTime;
-            jogador.transform.Translate(new Vector3(xSpeed, 0, 0));
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -112,5 +99,5 @@ public class JogadorComportamentoFaseDois : MonoBehaviour
         jogador.velocity = new Vector3(jogador.velocity.x, 0, jogador.velocity.z);
         naAgua = true;
     }
-    
+
 }
