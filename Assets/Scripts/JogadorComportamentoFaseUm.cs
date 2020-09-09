@@ -52,7 +52,13 @@ public class JogadorComportamentoFaseUm : MonoBehaviour
             if(MusicaController.musica != null) {
                 MusicaController.musica.Stop();
             }
-            SceneManager.LoadScene("GameOver");
+
+            if (Jogador.vidas == 0) {
+                SceneManager.LoadScene("GameOver");
+            } else {
+                Jogador.vidas--;
+                SceneManager.LoadScene("TentarNovamenteFaseUm");
+            }
         } 
 
 

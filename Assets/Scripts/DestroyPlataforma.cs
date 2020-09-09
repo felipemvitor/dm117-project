@@ -24,7 +24,7 @@ public class DestroyPlataforma : MonoBehaviour
     {
         if (collidedWithThis.gameObject.name == "Jogador" && ControladorJogo.numTiles < 6)
         {
-            StartCoroutine(FallAfterDelay());
+           StartCoroutine(FallAfterDelay());
         }
 
     }

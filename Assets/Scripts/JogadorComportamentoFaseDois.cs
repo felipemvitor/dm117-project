@@ -34,11 +34,6 @@ public class JogadorComportamentoFaseDois : MonoBehaviour
     /// Valor que indica se o jogador caiu na agua
     /// </summary>
     private bool naAgua = false;
-
-    /// <summary>
-    /// Valor que indica a quantidade de vidas do jogador
-    /// </summary>
-    public static int life = 3;
     
     // Start is called before the first frame update
     void Start()
@@ -54,7 +49,13 @@ public class JogadorComportamentoFaseDois : MonoBehaviour
 
         if (transform.position.y <= 4) {
             MusicaController.musica.Stop();
-            SceneManager.LoadScene("GameOver");
+
+             if (Jogador.vidas == 0) {
+                SceneManager.LoadScene("GameOver");
+            } else {
+                Jogador.vidas--;
+                SceneManager.LoadScene("TentarNovamenteFaseDois");
+            }
         }
 
         if (!naAgua)
@@ -111,4 +112,5 @@ public class JogadorComportamentoFaseDois : MonoBehaviour
         jogador.velocity = new Vector3(jogador.velocity.x, 0, jogador.velocity.z);
         naAgua = true;
     }
+    
 }

@@ -22,12 +22,13 @@ public class ParticleCollision : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         if (other.gameObject.name == "Jogador") {
-            if(JogadorComportamentoFaseDois.life == 0) {
+            if(Jogador.vidas == 0) {
                 MusicaController.musica.Stop();
                 SceneManager.LoadScene("GameOver");
              } else {
-                 ControladorJogo.numTiles = 0;
-                JogadorComportamentoFaseDois.life--;
+                MusicaController.musica.Stop();
+                ControladorJogo.numTiles = 0;
+                Jogador.vidas--;
                 SceneManager.LoadScene("TelaInicialFaseDois");
              }
          } 

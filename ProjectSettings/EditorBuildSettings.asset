@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TelaFinal.unity
     guid: 2681c1d172c598b46902db16c6042293
+  - enabled: 1
+    path: Assets/Scenes/TentarNovamenteFaseDois.unity
+    guid: 5d8b801ac37c93f4aa7810fa37ca257f
   m_configObjects: {}
