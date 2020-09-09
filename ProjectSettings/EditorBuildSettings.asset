@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TentarNovamenteFaseDois.unity
     guid: 5d8b801ac37c93f4aa7810fa37ca257f
+  - enabled: 1
+    path: Assets/Scenes/TentarNovamenteFaseUm.unity
+    guid: 27961fbc8731ec14a81e69770d1ec162
   m_configObjects: {}

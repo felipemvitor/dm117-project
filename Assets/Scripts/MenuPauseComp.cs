@@ -33,6 +33,10 @@ public class MenuPauseComp : MonoBehaviour
                 MusicaController.musica.Play();
             }
         }
+        else
+        {
+            UnityAdController.PlayVideoAd();
+        }
     }
 
 
